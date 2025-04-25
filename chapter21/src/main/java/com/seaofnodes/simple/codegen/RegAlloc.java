@@ -297,7 +297,7 @@ public class RegAlloc {
                         // Find a def input, and check register class
                         if( use.in( i ) == def && mach.regmap( i ).overlap( rmask ) )
                             // Modify use to use the split version specialized to this rclass
-                            { use.setDef( i, split ); j--; break; }
+                            { use.setDefOrdered( i, split ); j--; break; }
                 }
             }
         }
